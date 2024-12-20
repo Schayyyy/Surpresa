@@ -176,7 +176,14 @@
         <div class="hidden final-message" id="final-message"></div>
         <div class="hidden" id="gift-message"></div>
     </div>
-
+    
+    <!-- Vídeo do YouTube (agora no final) -->
+    <div class="video-container hidden" style="text-align: center; margin-top: 20px;">
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/9dTH2BnWSaY" 
+         title="Vídeo do YouTube Shorts" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+         allowfullscreen></iframe>
+    </div>
+    
     <script>
         // Função para gerar corações flutuantes
         function createFloatingHearts() {
@@ -357,7 +364,13 @@
             setTimeout(() => {
                 giftMessageDiv.innerHTML = "<p>Espero que goste, eu amo você! Com carinho, Schay.</p>";
             }, 5000); // Atraso de 5 segundos
-        }
+            
+        // Finalização
+        setTimeout(() => {
+            document.getElementById('final-message').style.opacity = 1;
+            document.getElementById('final-message').textContent = "Surpresa! Eu te amo muito. 💖";
+            document.querySelector('.video-container').classList.remove('hidden');
+        }, 100000);
     </script>
 </body>
 </html>
